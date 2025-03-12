@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hotel_booking/components/ui/screens/signInScreen.dart';
+import 'package:hotel_booking/components/ui/screens/SignInScreen.dart';
+import 'package:hotel_booking/components/ui/utility/app_color.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -122,7 +123,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   ),
                   FloatingActionButton(
                     onPressed: _nextPage,
-                    backgroundColor: Colors.indigo,
+                    backgroundColor: const Color.fromARGB(255, 23, 105, 246),
                     child: const Icon(Icons.arrow_forward, color: Colors.white),
                     shape: const CircleBorder(),
                   ),
@@ -177,7 +178,7 @@ class DotIndicator extends StatelessWidget {
   const DotIndicator({
     super.key,
     this.isActive = false,
-    this.activeColor = Colors.indigo,
+    this.activeColor = AppColors.primaryColor,
     this.inActiveColor = const Color(0xFF868686),
   });
 

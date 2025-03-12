@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hotel_booking/components/ui/screens/signInScreen.dart';
+import 'package:hotel_booking/components/ui/screens/SignInScreen.dart';
+import 'package:hotel_booking/components/ui/utility/app_color.dart';
 import 'package:hotel_booking/components/ui/widgets/custome_bottom.dart';
-
 
 class SignUpScreen extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
@@ -23,10 +23,9 @@ class SignUpScreen extends StatelessWidget {
                   SizedBox(height: constraints.maxHeight * 0.2),
                   Text(
                     "Create Account!",
-                    style: Theme.of(context)
-                        .textTheme
-                        .headlineLarge!
-                        .copyWith(fontWeight: FontWeight.bold),
+                    style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   Text(
                     "You have to see you again to your accout",
@@ -40,26 +39,32 @@ class SignUpScreen extends StatelessWidget {
                         TextFormField(
                           decoration: InputDecoration(
                             border: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white)),
+                              borderSide: BorderSide(color: Colors.white),
+                            ),
                             enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white12),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8))),
+                              borderSide: BorderSide(color: Colors.white12),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(8),
+                              ),
+                            ),
                             focusedBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(8)),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(8),
+                              ),
                               borderSide: BorderSide(
-                                color: Colors.white12,
+                                color: AppColors.primaryColor,
                               ), // Border when focused
                             ),
                             hintText: 'Email',
-                            hintStyle: TextStyle(color: Colors.grey.shade400),
+                            hintStyle: TextStyle(color: Colors.grey.shade600),
                             prefixIcon: Icon(
-                              Icons.email,
-                              color: Colors.grey.shade400,
+                              Icons.email_outlined,
+                              color: Colors.grey.shade600,
                             ),
                             contentPadding: const EdgeInsets.symmetric(
-                                horizontal: 16.0 * 1.5, vertical: 14.0),
+                              horizontal: 16.0 * 1.5,
+                              vertical: 14.0,
+                            ),
                           ),
                           keyboardType: TextInputType.text,
                           onSaved: (phone) {
@@ -70,83 +75,93 @@ class SignUpScreen extends StatelessWidget {
                         TextFormField(
                           decoration: InputDecoration(
                             border: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white)),
+                              borderSide: BorderSide(color: Colors.white),
+                            ),
                             enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white12),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8))),
+                              borderSide: BorderSide(color: Colors.white12),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(8),
+                              ),
+                            ),
                             focusedBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(8)),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(8),
+                              ),
                               borderSide: BorderSide(
-                                color: Colors.white12,
+                                color: AppColors.primaryColor,
                               ), // Border when focused
                             ),
                             hintText: 'Phone',
-                            hintStyle: TextStyle(color: Colors.grey.shade400),
+                            hintStyle: TextStyle(color: Colors.grey.shade600),
                             prefixIcon: Icon(
                               Icons.call,
-                              color: Colors.grey.shade400,
+                              color: Colors.grey.shade600,
                             ),
                             contentPadding: const EdgeInsets.symmetric(
-                                horizontal: 16.0 * 1.5, vertical: 14.0),
+                              horizontal: 16.0 * 1.5,
+                              vertical: 14.0,
+                            ),
                           ),
                           keyboardType: TextInputType.phone,
                           onSaved: (phone) {
                             // Save it
                           },
                         ),
-                        SizedBox(
-                          height: 15,
-                        ),
+                        SizedBox(height: 15),
                         TextFormField(
                           obscureText: true,
                           decoration: InputDecoration(
                             border: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white)),
+                              borderSide: BorderSide(color: Colors.white),
+                            ),
                             enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white12),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(7))),
+                              borderSide: BorderSide(color: Colors.white12),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(7),
+                              ),
+                            ),
                             focusedBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(7)),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(7),
+                              ),
                               borderSide: BorderSide(
-                                color: Colors.white12,
+                                color: AppColors.primaryColor,
                               ), // Border when focused
                             ),
                             hintText: 'Password',
-                            hintStyle: TextStyle(color: Colors.grey.shade400),
+                            hintStyle: TextStyle(color: Colors.grey.shade600),
                             prefixIcon: Icon(
                               Icons.password_rounded,
-                              color: Colors.grey.shade400,
+                              color: Colors.grey.shade600,
                             ),
                             suffixIcon: Icon(
                               Icons.remove_red_eye_sharp,
-                              color: Colors.grey.shade400,
+                              color: Colors.grey.shade600,
                             ),
                             contentPadding: const EdgeInsets.symmetric(
-                                horizontal: 16.0 * 1.5, vertical: 14.0),
+                              horizontal: 16.0 * 1.5,
+                              vertical: 14.0,
+                            ),
                           ),
                           onSaved: (passaword) {
                             // Save it
                           },
                         ),
-                        SizedBox(
-                          height: 25,
-                        ),
+                        SizedBox(height: 25),
                         CustomButton(
-                            onPressed: () {
-                              //Get.to(() => BottomNavScreen());
-                            },
-                            text: "Register",
-                            color: const Color(0xFF4A3298),
-                            txtcolor: Colors.white),
+                          onPressed: () {
+                            //Get.to(() => BottomNavScreen());
+                          },
+                          text: "Register",
+                          color: AppColors.primaryColor,
+                          txtcolor: Colors.white,
+                        ),
                         Column(
                           children: [
                             Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(vertical: 16.0),
+                              padding: const EdgeInsets.symmetric(
+                                vertical: 16.0,
+                              ),
                               child: Row(
                                 children: [
                                   Expanded(
@@ -157,7 +172,8 @@ class SignUpScreen extends StatelessWidget {
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.symmetric(
-                                        horizontal: 8.0),
+                                      horizontal: 8.0,
+                                    ),
                                     child: Text(
                                       "Or Sign up with",
                                       style: TextStyle(
@@ -184,8 +200,8 @@ class SignUpScreen extends StatelessWidget {
                   ),
                   socialwithSignIn(),
                   SizedBox(
-                      height: constraints.maxHeight *
-                          0.1), // Add spacing at the bottom
+                    height: constraints.maxHeight * 0.1,
+                  ), // Add spacing at the bottom
 
                   TextButton(
                     onPressed: () {
@@ -202,12 +218,10 @@ class SignUpScreen extends StatelessWidget {
                         ],
                       ),
                       style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                            color: Theme.of(context)
-                                .textTheme
-                                .bodyLarge!
-                                .color!
-                                .withOpacity(0.64),
-                          ),
+                        color: Theme.of(
+                          context,
+                        ).textTheme.bodyLarge!.color!.withOpacity(0.64),
+                      ),
                     ),
                   ),
                 ],
@@ -221,9 +235,7 @@ class SignUpScreen extends StatelessWidget {
 }
 
 class socialwithSignIn extends StatelessWidget {
-  const socialwithSignIn({
-    super.key,
-  });
+  const socialwithSignIn({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -234,53 +246,53 @@ class socialwithSignIn extends StatelessWidget {
           height: 60,
           width: 60,
           decoration: BoxDecoration(
-              color: Colors.grey.shade100,
-              borderRadius: BorderRadius.circular(8)),
+            color: Colors.grey.shade100,
+            borderRadius: BorderRadius.circular(8),
+          ),
           child: ClipRRect(
-              child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Image.network(
-              "https://cdn-icons-png.flaticon.com/128/281/281764.png",
-              fit: BoxFit.cover,
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Image.network(
+                "https://cdn-icons-png.flaticon.com/128/281/281764.png",
+                fit: BoxFit.cover,
+              ),
             ),
-          )),
+          ),
         ),
-        SizedBox(
-          width: 12,
-        ),
+        SizedBox(width: 12),
         Container(
           height: 60,
           width: 60,
           decoration: BoxDecoration(
-              color: Colors.grey.shade100,
-              borderRadius: BorderRadius.circular(8)),
+            color: Colors.grey.shade100,
+            borderRadius: BorderRadius.circular(8),
+          ),
           child: ClipRRect(
-              child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Image.network(
-              "https://cdn-icons-png.flaticon.com/128/0/747.png",
-              fit: BoxFit.cover,
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Image.network(
+                "https://cdn-icons-png.flaticon.com/128/0/747.png",
+                fit: BoxFit.cover,
+              ),
             ),
-          )),
+          ),
         ),
-        SizedBox(
-          width: 12,
-        ),
-        Container(
-          height: 60,
-          width: 60,
-          decoration: BoxDecoration(
-              color: Colors.grey.shade100,
-              borderRadius: BorderRadius.circular(8)),
-          child: ClipRRect(
-              child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Image.network(
-              "https://cdn-icons-png.flaticon.com/128/5968/5968764.png",
-              fit: BoxFit.cover,
-            ),
-          )),
-        ),
+        SizedBox(width: 12),
+        // Container(
+        //   height: 60,
+        //   width: 60,
+        //   decoration: BoxDecoration(
+        //       color: Colors.grey.shade100,
+        //       borderRadius: BorderRadius.circular(8)),
+        //   child: ClipRRect(
+        //       child: Padding(
+        //     padding: const EdgeInsets.all(16.0),
+        //     child: Image.network(
+        //       "https://cdn-icons-png.flaticon.com/128/5968/5968764.png",
+        //       fit: BoxFit.cover,
+        //     ),
+        //   )),
+        // ),
       ],
     );
   }

@@ -38,8 +38,8 @@ class CustomButton extends StatelessWidget {
             text,
             style: GoogleFonts.roboto(
               color: txtcolor,
-              fontWeight: FontWeight.w500,
-             fontSize: isLargeScreen ? 24 : isSmallScreen ? 15 : 17, // Adjust font size based on screen size
+              fontWeight: FontWeight.w400,
+             //fontSize: isLargeScreen ? 24 : isSmallScreen ? 15 : 17, // Adjust font size based on screen size
             ),
           ),
         ),

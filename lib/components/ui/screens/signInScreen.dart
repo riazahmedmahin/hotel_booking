@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hotel_booking/components/ui/screens/forgetpassword.dart';
 import 'package:hotel_booking/components/ui/screens/signUpScreen.dart';
+import 'package:hotel_booking/components/ui/utility/app_color.dart';
 import 'package:hotel_booking/components/ui/widgets/custome_bottom.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -52,14 +54,14 @@ class SignInScreen extends StatelessWidget {
                                 Radius.circular(7),
                               ),
                               borderSide: BorderSide(
-                                color: Colors.white10,
+                                color: AppColors.primaryColor,
                               ), // Border when focused
                             ),
-                            hintText: 'Phone',
-                            hintStyle: TextStyle(color: Colors.grey.shade400),
+                            hintText: 'Email',
+                            hintStyle: TextStyle(color: Colors.grey.shade600),
                             prefixIcon: Icon(
-                              Icons.call,
-                              color: Colors.grey.shade400,
+                              Icons.email_outlined,
+                              color: Colors.grey.shade600,
                             ),
                             contentPadding: const EdgeInsets.symmetric(
                               horizontal: 16.0 * 1.5,
@@ -97,16 +99,16 @@ class SignInScreen extends StatelessWidget {
                                 Radius.circular(7),
                               ),
                               borderSide: BorderSide(
-                                color: Color(
-                                  0x0F4A75E8,
-                                ), // 0F is the hex for 6% opacity
+                                color:
+                                    AppColors
+                                        .primaryColor, // 0F is the hex for 6% opacity
                               ), // Border when focused
                             ),
                             hintText: 'Password',
-                            hintStyle: TextStyle(color: Colors.grey.shade400),
+                            hintStyle: TextStyle(color: Colors.grey.shade600),
                             prefixIcon: Icon(
                               Icons.password_rounded,
-                              color: Colors.grey.shade400,
+                              color: Colors.grey.shade600,
                             ),
                             contentPadding: const EdgeInsets.symmetric(
                               horizontal: 16.0 * 1.5,
@@ -122,7 +124,7 @@ class SignInScreen extends StatelessWidget {
                           children: [
                             TextButton(
                               onPressed: () {
-                                //Get.to(ForgetPassword());
+                                Get.to(ForgetPassword());
                               },
                               child: Text(
                                 'Forgot Password?',
@@ -145,7 +147,7 @@ class SignInScreen extends StatelessWidget {
                             //Get.to(()=>BottomNavScreen());
                           },
                           text: "Sign In",
-                          color: const Color(0xFF4A3298),
+                          color: AppColors.primaryColor,
                           txtcolor: Colors.white,
                         ),
                         const SizedBox(height: 16.0),
@@ -204,7 +206,7 @@ class SignInScreen extends StatelessWidget {
                         children: [
                           TextSpan(
                             text: "Register",
-                            style: TextStyle(color: Colors.indigo),
+                            style: TextStyle(color: AppColors.primaryColor),
                           ),
                         ],
                       ),
@@ -269,23 +271,23 @@ class socialwithSignIn extends StatelessWidget {
           ),
         ),
         SizedBox(width: 12),
-        Container(
-          height: 60,
-          width: 60,
-          decoration: BoxDecoration(
-            color: Colors.grey.shade100,
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: ClipRRect(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Image.network(
-                "https://cdn-icons-png.flaticon.com/128/5968/5968764.png",
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-        ),
+        // Container(
+        //   height: 60,
+        //   width: 60,
+        //   decoration: BoxDecoration(
+        //     color: Colors.grey.shade100,
+        //     borderRadius: BorderRadius.circular(8),
+        //   ),
+        //   child: ClipRRect(
+        //     child: Padding(
+        //       padding: const EdgeInsets.all(16.0),
+        //       child: Image.network(
+        //         "https://cdn-icons-png.flaticon.com/128/5968/5968764.png",
+        //         fit: BoxFit.cover,
+        //       ),
+        //     ),
+        //   ),
+        // ),
       ],
     );
   }

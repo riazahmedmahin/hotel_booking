@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hotel_booking/components/ui/screens/homescreen.dart';
+import 'package:hotel_booking/components/ui/screens/Homescreen.dart';
 import 'package:hotel_booking/components/ui/screens/onboardingScreen.dart';
 import 'package:hotel_booking/components/ui/utility/app_theme_data.dart';
 
