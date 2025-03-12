@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:hotel_booking/components/ui/screens/forgetpassword.dart';
 import 'package:hotel_booking/components/ui/screens/signUpScreen.dart';
 import 'package:hotel_booking/components/ui/utility/app_color.dart';
+import 'package:hotel_booking/components/ui/widgets/NavBottom.dart';
 import 'package:hotel_booking/components/ui/widgets/custome_bottom.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -144,7 +145,7 @@ class SignInScreen extends StatelessWidget {
                         SizedBox(height: 5),
                         CustomButton(
                           onPressed: () {
-                            //Get.to(()=>BottomNavScreen());
+                            Get.to(()=>BottomNavScreen());
                           },
                           text: "Sign In",
                           color: AppColors.primaryColor,

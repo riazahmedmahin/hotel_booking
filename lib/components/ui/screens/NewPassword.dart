@@ -12,12 +12,12 @@ class New_Password extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(elevation: 0),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(14.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 20),
+              //SizedBox(height: 20),
               Text(
                 "Set New Password",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
@@ -39,15 +39,15 @@ class New_Password extends StatelessWidget {
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(7)),
                     borderSide: BorderSide(
-                      color: Colors.white12,
+                      color: AppColors.primaryColor,
                     ), // Border when focused
                   ),
                   prefixIcon: Icon(
                     Icons.password_outlined,
-                    color: Colors.grey.shade400,
+                    color: Colors.grey.shade600,
                   ),
                   hintText: 'New Psssword',
-                  hintStyle: TextStyle(color: Colors.grey.shade400),
+                  hintStyle: TextStyle(color: Colors.grey.shade600),
                 ),
               ),
               SizedBox(height: 10),
@@ -63,15 +63,15 @@ class New_Password extends StatelessWidget {
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(7)),
                     borderSide: BorderSide(
-                      color: Colors.white12,
+                      color: AppColors.primaryColor,
                     ), // Border when focused
                   ),
                   prefixIcon: Icon(
                     Icons.password_outlined,
-                    color: Colors.grey.shade400,
+                    color: Colors.grey.shade600,
                   ),
                   hintText: ' Confrim New Password',
-                  hintStyle: TextStyle(color: Colors.grey.shade400),
+                  hintStyle: TextStyle(color: Colors.grey.shade600),
                 ),
               ),
               SizedBox(height: 20),
