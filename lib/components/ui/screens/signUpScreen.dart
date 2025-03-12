@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:hotel_booking/components/ui/screens/signInScreen.dart';
 import 'package:hotel_booking/components/ui/widgets/custome_bottom.dart';
 
 
@@ -18,8 +20,7 @@ class SignUpScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(height: constraints.maxHeight * 0.1),
-                  SizedBox(height: constraints.maxHeight * 0.1),
+                  SizedBox(height: constraints.maxHeight * 0.2),
                   Text(
                     "Create Account!",
                     style: Theme.of(context)
@@ -188,7 +189,7 @@ class SignUpScreen extends StatelessWidget {
 
                   TextButton(
                     onPressed: () {
-                      //Get.to(() => SignInScreen());
+                      Get.to(() => SignInScreen());
                     },
                     child: Text.rich(
                       const TextSpan(

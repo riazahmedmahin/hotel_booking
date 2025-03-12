@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hotel_booking/components/ui/screens/signInScreen.dart';
 
-
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
 
@@ -12,7 +11,7 @@ class OnboardingScreen extends StatefulWidget {
 class _OnboardingScreenState extends State<OnboardingScreen> {
   int currentPage = 0;
   late PageController _pageController;
-  bool _isSkipPressed = false; // Flag to prevent blinking
+  bool _isSkipPressed = false;
 
   @override
   void initState() {
@@ -38,7 +37,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           curve: Curves.easeInOut,
         );
       } else {
-        _navigateToLoginScreen(); // Navigate to LoginScreen instead of NewScreen
+        _navigateToLoginScreen();
       }
     }
   }
@@ -46,15 +45,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   void _navigateToLoginScreen() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) =>  SignInScreen()), // Replaced NewScreen with LoginScreen
+      MaterialPageRoute(builder: (context) => SignInScreen()),
     );
   }
 
   void _skipToLoginScreen() {
     setState(() {
-      _isSkipPressed = true; // Set the flag to true when skip is pressed
+      _isSkipPressed = true;
     });
-    _navigateToLoginScreen(); // Navigate to LoginScreen
+    _navigateToLoginScreen();
   }
 
   @override
@@ -66,9 +65,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           SafeArea(
             child: Column(
               children: [
-                const Spacer(flex: 1),
+                //const Spacer(),
                 Expanded(
-                  flex: 6,
+                  flex: 3,
                   child: PageView.builder(
                     controller: _pageController,
                     itemCount: demoData.length,
@@ -79,22 +78,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         });
                       }
                     },
-                    itemBuilder: (context, index) => OnboardContent(
-                      illustration: demoData[index]["illustration"],
-                      title: demoData[index]["title"],
-                      text: demoData[index]["text"],
-                    ),
+                    itemBuilder:
+                        (context, index) => OnboardContent(
+                          illustration: demoData[index]["illustration"],
+                          title: demoData[index]["title"],
+                          text: demoData[index]["text"],
+                        ),
                   ),
                 ),
                 const Spacer(),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: List.generate(
-                    demoData.length,
-                    (index) => DotIndicator(isActive: index == currentPage),
-                  ),
-                ),
-                const Spacer(flex: 2),
               ],
             ),
           ),
@@ -103,7 +95,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             top: 36,
             right: 16,
             child: TextButton(
-              onPressed: _skipToLoginScreen, // Navigate to LoginScreen on skip
+              onPressed: _skipToLoginScreen,
               child: const Text(
                 "Skip",
                 style: TextStyle(
@@ -114,15 +106,27 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ),
             ),
           ),
+          // Dot Indicator and Floating Action Button at the bottom
           Align(
-            alignment: Alignment.bottomRight,
+            alignment: Alignment.bottomCenter,
             child: Padding(
-              padding: const EdgeInsets.only(bottom: 36.0, right: 16),
-              child: FloatingActionButton(
-                onPressed: _nextPage,
-                backgroundColor: Colors.indigo,
-                child: const Icon(Icons.arrow_forward, color: Colors.white),
-                shape: const CircleBorder(),
+              padding: const EdgeInsets.only(bottom: 36.0, left: 16, right: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: List.generate(
+                      demoData.length,
+                      (index) => DotIndicator(isActive: index == currentPage),
+                    ),
+                  ),
+                  FloatingActionButton(
+                    onPressed: _nextPage,
+                    backgroundColor: Colors.indigo,
+                    child: const Icon(Icons.arrow_forward, color: Colors.white),
+                    shape: const CircleBorder(),
+                  ),
+                ],
               ),
             ),
           ),
@@ -146,22 +150,17 @@ class OnboardContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Expanded(
-          child: AspectRatio(
-            aspectRatio: 1,
-            child: Image.network(
-              illustration!,
-              fit: BoxFit.contain,
-            ),
-          ),
+        SizedBox(height: 100),
+        SizedBox(
+          height: 350, // Adjust this height as needed
+          child: Image.network(illustration!, fit: BoxFit.contain),
         ),
         const SizedBox(height: 16),
         Text(
           title!,
-          style: Theme.of(context)
-              .textTheme
-              .titleLarge!
-              .copyWith(fontWeight: FontWeight.bold),
+          style: Theme.of(
+            context,
+          ).textTheme.titleLarge!.copyWith(fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 8),
         Text(
@@ -189,12 +188,12 @@ class DotIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 250),
-      margin: const EdgeInsets.symmetric(horizontal: 16 / 2),
-      height: 5,
-      width: 8,
+      margin: const EdgeInsets.symmetric(horizontal: 4),
+      height: 8,
+      width: isActive ? 4 : 4,
       decoration: BoxDecoration(
         color: isActive ? activeColor : inActiveColor.withOpacity(0.25),
-        borderRadius: const BorderRadius.all(Radius.circular(20)),
+        borderRadius: BorderRadius.circular(6),
       ),
     );
   }
@@ -206,18 +205,18 @@ List<Map<String, dynamic>> demoData = [
     "illustration": "https://i.postimg.cc/L43CKddq/Illustrations.png",
     "title": "Track Your Package",
     "text":
-        "Easily track your packages in real-time,so you\nalways know where your delivery is.",
+        "Easily track your packages in real-time, so you\nalways know where your delivery is.",
   },
   {
     "illustration": "https://i.postimg.cc/xTjs9sY6/Illustrations-1.png",
     "title": "Free delivery offers",
     "text":
-        "Free delivery for new customers via Apple Pay\nand others payment methods.",
+        "Free delivery for new customers via Apple Pay\nand other payment methods.",
   },
   {
     "illustration": "https://i.postimg.cc/6qcYdZVV/Illustrations-2.png",
     "title": "Choose your food",
     "text":
-        "Easily find your type of food craving and\nyou’ll get delivery in wide range.",
+        "Easily find your type of food craving and\nyou’ll get delivery in a wide range.",
   },
 ];
