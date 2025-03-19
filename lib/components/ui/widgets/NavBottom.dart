@@ -32,13 +32,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: pages[currentSelectedIndex],
-      // floatingActionButton: FloatingActionButton(onPressed: (){
-      //   //Get.to(()=>CheckRatesScreen());
-      // },
-      // child: Icon(Icons.add),
-      // ),
-      //       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-
+   
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
 

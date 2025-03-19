@@ -60,7 +60,7 @@ class ForgetPassword extends StatelessWidget {
             ),
             CustomButton(
                 onPressed: () {
-                  Get.to(OtpScreen());
+                  Navigator.pushNamed(context, '/OTP');
                 },
                 text: "Next",
                 color: AppColors.primaryColor,

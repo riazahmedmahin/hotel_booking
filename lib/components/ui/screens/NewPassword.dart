@@ -77,7 +77,7 @@ class New_Password extends StatelessWidget {
               SizedBox(height: 20),
               CustomButton(
                 onPressed: () {
-                  // Get.to(SuccessfulScreen());
+                  Navigator.pushNamed(context, '/BottomNav');
                 },
                 text: "Confirm",
                 color: AppColors.primaryColor,

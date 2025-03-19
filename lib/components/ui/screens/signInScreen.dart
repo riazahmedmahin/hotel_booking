@@ -125,7 +125,7 @@ class SignInScreen extends StatelessWidget {
                           children: [
                             TextButton(
                               onPressed: () {
-                                Get.to(ForgetPassword());
+                                Navigator.pushNamed(context, '/Forgetpass');
                               },
                               child: Text(
                                 'Forgot Password?',
@@ -145,7 +145,7 @@ class SignInScreen extends StatelessWidget {
                         SizedBox(height: 5),
                         CustomButton(
                           onPressed: () {
-                            Get.to(()=>BottomNavScreen());
+                            Navigator.pushNamed(context, '/BottomNav');
                           },
                           text: "Sign In",
                           color: AppColors.primaryColor,
@@ -199,7 +199,7 @@ class SignInScreen extends StatelessWidget {
                   // Add spacing at the bottom
                   TextButton(
                     onPressed: () {
-                      Get.to(() => SignUpScreen());
+                      Navigator.pushNamed(context, '/Signup');
                     },
                     child: Text.rich(
                       const TextSpan(

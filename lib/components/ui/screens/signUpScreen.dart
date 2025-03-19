@@ -150,7 +150,7 @@ class SignUpScreen extends StatelessWidget {
                         SizedBox(height: 25),
                         CustomButton(
                           onPressed: () {
-                            //Get.to(() => BottomNavScreen());
+                            Navigator.pushNamed(context, '/BottomNav');
                           },
                           text: "Register",
                           color: AppColors.primaryColor,
@@ -205,7 +205,7 @@ class SignUpScreen extends StatelessWidget {
 
                   TextButton(
                     onPressed: () {
-                      Get.to(() => SignInScreen());
+                      Navigator.pushNamed(context, '/Signin');
                     },
                     child: Text.rich(
                       const TextSpan(

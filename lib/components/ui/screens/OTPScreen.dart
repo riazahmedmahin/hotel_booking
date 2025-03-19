@@ -216,7 +216,7 @@ class OtpForm extends StatelessWidget {
           const SizedBox(height: 24),
           CustomButton(
             onPressed: () {
-              Get.to(New_Password());
+              Navigator.pushNamed(context, '/Newpass');
             },
             text: "Confirm",
             color: AppColors.primaryColor,
