@@ -10,7 +10,7 @@ class HotelBoking extends StatelessWidget {
   const HotelBoking({super.key});
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppThemeData.lightTheme,
       home:  OnboardingScreen(),
