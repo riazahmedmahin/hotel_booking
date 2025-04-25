@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'details.dart';
+import 'package:hotel_booking/components/ui/screens/Hotel%20details.dart';
 
 class Hotel {
   final String name;
@@ -8,8 +8,9 @@ class Hotel {
   final double rating;
   final String imageUrl;
   final bool isFavorite;
+  final List<String> photoimageUrls;
 
-  Hotel(this.name, this.location, this.price, this.rating, this.imageUrl,
+  Hotel(this.name, this.location, this.price, this.rating, this.imageUrl, this.photoimageUrls,
       {this.isFavorite = false});
 }
 
@@ -21,6 +22,12 @@ class HomeScreen extends StatelessWidget {
       1500,
       4.5,
       "https://images.unsplash.com/photo-1561383818-ca5eee8c1d06?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aG90ZWx8ZW58MHx8MHx8fDA%3D",
+      [
+    'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjByb29tfGVufDB8fDB8fHww',
+    'https://plus.unsplash.com/premium_photo-1661929519129-7a76946c1d38?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGhvdGVsfGVufDB8fDB8fHww',
+    'https://images.unsplash.com/photo-1582719508461-905c673771fd',
+    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c',
+      ]
     ),
     Hotel(
       "Nexon Suites",
@@ -28,6 +35,12 @@ class HomeScreen extends StatelessWidget {
       200,
       4.0,
       "https://images.unsplash.com/photo-1678912128919-b69e9e855c00?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODJ8fGhvdGVsfGVufDB8fDB8fHww",
+      [
+           'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjByb29tfGVufDB8fDB8fHww',
+    'https://plus.unsplash.com/premium_photo-1661929519129-7a76946c1d38?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGhvdGVsfGVufDB8fDB8fHww',
+    'https://images.unsplash.com/photo-1582719508461-905c673771fd',
+    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c',
+      ]
     ),
         Hotel(
       "Nexon Suites",
@@ -35,6 +48,10 @@ class HomeScreen extends StatelessWidget {
       200,
       4.0,
       "https://images.unsplash.com/photo-1546519393-754ec8cafd47?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTF8fGhvdGVsJTIwdG93ZXJ8ZW58MHx8MHx8fDA%3D",
+      [   'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjByb29tfGVufDB8fDB8fHww',
+    'https://plus.unsplash.com/premium_photo-1661929519129-7a76946c1d38?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGhvdGVsfGVufDB8fDB8fHww',
+    'https://images.unsplash.com/photo-1582719508461-905c673771fd',
+    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c',]
     ),
         Hotel(
       "Nexon Suites",
@@ -42,6 +59,12 @@ class HomeScreen extends StatelessWidget {
       200,
       4.0,
       "https://images.unsplash.com/photo-1711743266323-5badf42d4797?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTl8fGhvdGVsJTIwdG93ZXJ8ZW58MHx8MHx8fDA%3D",
+      [
+           'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjByb29tfGVufDB8fDB8fHww',
+    'https://plus.unsplash.com/premium_photo-1661929519129-7a76946c1d38?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGhvdGVsfGVufDB8fDB8fHww',
+    'https://images.unsplash.com/photo-1582719508461-905c673771fd',
+    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c',
+      ]
     ),
   ];
 
@@ -52,6 +75,13 @@ class HomeScreen extends StatelessWidget {
       349.7,
       4.3,
       "https://images.unsplash.com/photo-1704316417626-d21b6c0785d0?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODN8fGhvdGVsfGVufDB8fDB8fHww",
+      [
+            'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjByb29tfGVufDB8fDB8fHww',
+    'https://plus.unsplash.com/premium_photo-1661929519129-7a76946c1d38?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGhvdGVsfGVufDB8fDB8fHww',
+    'https://images.unsplash.com/photo-1582719508461-905c673771fd',
+    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c',
+
+      ]
     ),
     Hotel(
       "Horizon Crest",
@@ -59,6 +89,12 @@ class HomeScreen extends StatelessWidget {
       1500,
       4.2,
       "https://images.unsplash.com/photo-1646813683338-5cc48d39e1f6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTE2fHxob3RlbHxlbnwwfHwwfHx8MA%3D%3D",
+      [
+            'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjByb29tfGVufDB8fDB8fHww',
+    'https://plus.unsplash.com/premium_photo-1661929519129-7a76946c1d38?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGhvdGVsfGVufDB8fDB8fHww',
+    'https://images.unsplash.com/photo-1582719508461-905c673771fd',
+    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c',
+      ],
       isFavorite: true,
     ),
         Hotel(
@@ -67,6 +103,12 @@ class HomeScreen extends StatelessWidget {
       1500,
       4.2,
       "https://plus.unsplash.com/premium_photo-1681429766562-fffa63d382c2?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGhvdGVsJTIwdG93ZXJ8ZW58MHx8MHx8fDA%3D",
+      [
+            'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjByb29tfGVufDB8fDB8fHww',
+    'https://plus.unsplash.com/premium_photo-1661929519129-7a76946c1d38?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGhvdGVsfGVufDB8fDB8fHww',
+    'https://images.unsplash.com/photo-1582719508461-905c673771fd',
+    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c',
+      ],
       //isFavorite: true,
     ),
         Hotel(
@@ -75,6 +117,12 @@ class HomeScreen extends StatelessWidget {
       1500,
       4.2,
       "https://images.unsplash.com/photo-1642202545168-6dbdca6b204f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhvdGVsJTIwdG93ZXJ8ZW58MHx8MHx8fDA%3D",
+      [
+            'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjByb29tfGVufDB8fDB8fHww',
+    'https://plus.unsplash.com/premium_photo-1661929519129-7a76946c1d38?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGhvdGVsfGVufDB8fDB8fHww',
+    'https://images.unsplash.com/photo-1582719508461-905c673771fd',
+    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c',
+      ],
       //isFavorite: true,
     ),
   ];
@@ -175,7 +223,7 @@ Row(
             _sectionHeader("Popular Hotel"),
             SizedBox(height: 10),
             _horizontalHotelList(popularHotels, context),
-            SizedBox(height: 30),
+            SizedBox(height: 5),
             _sectionHeader("Your Offer List"),
             SizedBox(height: 10),
             _verticalOfferList(offerList, context),
@@ -254,7 +302,7 @@ Row(
                               Icon(Icons.star, size: 14, color: Colors.orange),
                               SizedBox(width: 3),
                               Text(hotel.rating.toString(),
-                                  style: TextStyle(fontWeight: FontWeight.bold)),
+                                  style: TextStyle(fontWeight: FontWeight.bold,fontSize: 12)),
                             ],
                           ),
                         ),
@@ -351,7 +399,8 @@ Row(
                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(Icons.star, size: 18, color: Colors.orange),
-                        Text(hotel.rating.toString()),
+                        SizedBox(width: 2,),
+                        Text(hotel.rating.toString(),style: TextStyle(fontSize: 12,fontWeight: FontWeight.bold),),
                       ],
                     ),
                     

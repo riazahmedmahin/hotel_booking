@@ -6,6 +6,7 @@ import 'package:hotel_booking/components/ui/screens/OTPScreen.dart';
 import 'package:hotel_booking/components/ui/screens/SignInScreen.dart';
 import 'package:hotel_booking/components/ui/screens/SignUpScreen.dart';
 import 'package:hotel_booking/components/ui/screens/onboardingScreen.dart';
+import 'package:hotel_booking/components/ui/screens/symmary.dart';
 import 'package:hotel_booking/components/ui/widgets/NavBottom.dart';
 
 class Approutes{
@@ -16,6 +17,9 @@ class Approutes{
     '/Forgetpass':(context)=>ForgetPassword(),
     '/Onboarding':(context)=>OnboardingScreen(),
     '/OTP':(context)=>OtpScreen(),
-    '/Newpass':(context)=>New_Password()
+    '/Newpass':(context)=>New_Password(),
+    '/Bookingsummary':(context)=>BookingSummaryScreen(hotel: null, checkIn: '', checkOut: '', guestName: '', roomType: '', guestEmail: '',)
+
+  
   };
 }
