@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hotel_booking/components/ui/screens/bookinginfo.dart';
+import 'package:hotel_booking/components/ui/screens/hotel/bookinginfo.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';

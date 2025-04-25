@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hotel_booking/components/ui/screens/forgetpassword.dart';
-import 'package:hotel_booking/components/ui/screens/signUpScreen.dart';
 import 'package:hotel_booking/components/ui/utility/app_color.dart';
 import 'package:hotel_booking/components/ui/widgets/NavBottom.dart';
 import 'package:hotel_booking/components/ui/widgets/custome_bottom.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hotel_booking/components/ui/screens/SignInScreen.dart';
+import 'package:hotel_booking/components/ui/screens/auth/SignInScreen.dart';
 import 'package:hotel_booking/components/ui/utility/app_color.dart';
 
 class OnboardingScreen extends StatefulWidget {

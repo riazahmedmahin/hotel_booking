@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hotel_booking/components/ui/screens/Hotel%20details.dart';
+import 'package:hotel_booking/components/ui/screens/hotel/Hotel%20details.dart';
 
 class Hotel {
   final String name;

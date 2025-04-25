@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hotel_booking/components/ui/screens/OTPScreen.dart';
 
-import '../utility/app_color.dart';
-import '../widgets/custome_bottom.dart';
+import '../../utility/app_color.dart';
+import '../../widgets/custome_bottom.dart';
 
 class ForgetPassword extends StatelessWidget {
   const ForgetPassword({super.key});
