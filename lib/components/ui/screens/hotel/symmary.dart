@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hotel_booking/components/ui/utility/app_color.dart';
+import 'package:hotel_booking/components/ui/widgets/custome_bottom.dart';
 
 class BookingSummaryScreen extends StatelessWidget {
   final hotel;
@@ -84,7 +86,7 @@ class BookingSummaryScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: 5),
                           Text(
-                            "\$${hotel.price} / month",
+                            "\$${hotel.price} / night",
                             style: const TextStyle(
                               fontWeight: FontWeight.bold,
                             ),
@@ -132,6 +134,11 @@ class BookingSummaryScreen extends StatelessWidget {
               buildSummaryItem("Room Type", roomType),
               buildSummaryItem("Guest Name", guestName),
               buildSummaryItem("Guest Email", guestEmail),
+              
+              CustomButton(onPressed: (){},
+               text: "pay \$${hotel.price}",
+                color: AppColors.primaryColor,
+                 txtcolor: Colors.white)
             ],
           ),
         ),

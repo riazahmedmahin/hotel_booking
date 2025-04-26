@@ -18,13 +18,13 @@ class HotelDetailScreen extends StatelessWidget {
   final List<Map<String, String>> videoList = [
     {
       'title': 'Hotel Tour',
-      'thumbnail': 'https://img.youtube.com/vi/1roy4o4tqQM/0.jpg',
-      'url': 'https://www.youtube.com/watch?v=1roy4o4tqQM'
+      'thumbnail': 'https://media.istockphoto.com/id/802281402/photo/hand-holding-key-card-hotel-room-access.webp?a=1&b=1&s=612x612&w=0&k=20&c=bZ2WiI6U_PYw5PQqMKnFOhvbxPLbAb7w3NKIGnUJDT0=',
+      'url': 'https://www.youtube.com/watch?v=qemqQHaeCYo'
     },
     {
       'title': 'Luxury Suite',
-      'thumbnail': 'https://img.youtube.com/vi/M7lc1UVf-VE/0.jpg',
-      'url': 'https://www.youtube.com/watch?v=M7lc1UVf-VE'
+      'thumbnail': 'https://media.istockphoto.com/id/2046945081/photo/modern-style-luxury-black-living-room-with-city-view-in-the-night-3d-render.webp?a=1&b=1&s=612x612&w=0&k=20&c=mfD6XrEfmjw-AIOwKvgnjP7X7svgVeU0kf1GKjwIAZc=',
+      'url': 'https://www.youtube.com/watch?v=eEY50BOF0wM'
     },
   ];
 
