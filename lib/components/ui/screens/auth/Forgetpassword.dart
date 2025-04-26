@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../../utility/app_color.dart';
 import '../../widgets/custome_bottom.dart';

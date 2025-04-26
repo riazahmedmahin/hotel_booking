@@ -1,56 +1,172 @@
 import 'package:flutter/material.dart';
-import 'package:hotel_booking/components/ui/screens/homescreen.dart';
 
 class BookingSummaryScreen extends StatelessWidget {
-  final  hotel;
-  final String checkIn;
-  final String checkOut;
+  final hotel;
+  final String checkInDate;
+  final String checkOutDate;
+  final String persons;
+  final String rooms;
+  final String roomType;
   final String guestName;
   final String guestEmail;
-  final String? roomType;
 
   const BookingSummaryScreen({
-    super.key,
+    Key? key,
     required this.hotel,
-    required this.checkIn,
-    required this.checkOut,
+    required this.checkInDate,
+    required this.checkOutDate,
+    required this.persons,
+    required this.rooms,
+    required this.roomType,
     required this.guestName,
     required this.guestEmail,
-    required this.roomType,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Booking Summary'),
-        backgroundColor: Colors.white,
         elevation: 0,
+        backgroundColor: Colors.white,
       ),
-      backgroundColor: const Color(0xFFF4F7FD),
+      backgroundColor:Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            //Text(hote.name, style: TextStyle(fontSize: 16)),
-           // Text("Location: ${hotel.location}", style: TextStyle(fontSize: 16)),
-            Text("Check-in: $checkIn", style: TextStyle(fontSize: 16)),
-            Text("Check-out: $checkOut", style: TextStyle(fontSize: 16)),
-            Text("Room Type: $roomType", style: TextStyle(fontSize: 16)),
-            Text("Guest Name: $guestName", style: TextStyle(fontSize: 16)),
-            Text("Guest Email: $guestEmail", style: TextStyle(fontSize: 16)),
-            const Spacer(),
-            Center(
-              child: ElevatedButton(
-                onPressed: () {
-                  // Do final confirmation here
-                },
-                child: Text("Complete Booking"),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Hotel Info
+               Container(
+                margin: const EdgeInsets.only(bottom: 15),
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade50,
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.shade200,
+                      blurRadius: 8,
+                      spreadRadius: 4,
+                    ),
+                  ],
+                ),
+                child: Row(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.network(
+                        hotel.imageUrl,
+                        height: 70,
+                        width: 70,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            hotel.name,
+                            style: const TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Text(
+                            hotel.location,
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 12,
+                            ),
+                          ),
+                          const SizedBox(height: 5),
+                          Text(
+                            "\$${hotel.price} / month",
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Icon(
+                              Icons.star,
+                              size: 18,
+                              color: Colors.orange,
+                            ),
+                            const SizedBox(width: 2),
+                            Text(
+                              hotel.rating.toString(),
+                              style: const TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 45),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 10),
+
+              // Booking Details
+              Text("Room Details",style: TextStyle(fontWeight: FontWeight.bold),),
+              SizedBox(height: 5,),
+              buildSummaryItem("Check-In Date", checkInDate),
+              buildSummaryItem("Check-Out Date", checkOutDate),
+              Text("Guets details",style: TextStyle(fontWeight: FontWeight.bold),),
+              SizedBox(height: 5,),
+              buildSummaryItem("Persons", persons),
+              buildSummaryItem("Rooms", rooms),
+              buildSummaryItem("Room Type", roomType),
+              buildSummaryItem("Guest Name", guestName),
+              buildSummaryItem("Guest Email", guestEmail),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget buildSummaryItem(String title, String value) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 12),
+      padding: const EdgeInsets.symmetric(vertical: 2),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+        //border: Border.all(color: Colors.grey.shade300),
+      ),
+      child: Row(
+        children: [
+          Text(
+            "$title: ",
+            style: const TextStyle(
+              fontWeight: FontWeight.normal,
+              color: Colors.grey
+            ),
+          ),
+          Expanded(
+            child: Text(
+              value,
+              textAlign: TextAlign.right,
+              style: const TextStyle(
+                fontWeight: FontWeight.normal,
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

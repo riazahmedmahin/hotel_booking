@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hotel_booking/components/ui/screens/Homescreen.dart';
+import 'package:hotel_booking/components/ui/screens/hotel/symmary.dart';
 import 'package:hotel_booking/components/ui/utility/app_color.dart';
 import 'package:hotel_booking/components/ui/widgets/custome_bottom.dart';
 
@@ -268,15 +269,29 @@ TextEditingController emailController = TextEditingController();
               ),
               
               const Spacer(),
-              CustomButton(
-                onPressed: () 
-                {
-                  Navigator.pushNamed(context, '/Bookingsummary');
-                },
-                text: "Confirm",
-                color: AppColors.primaryColor,
-                txtcolor: Colors.white,
-              ),
+            CustomButton(
+  onPressed: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => BookingSummaryScreen(
+          hotel: widget.hotel,
+          checkInDate: checkInController.text,
+          checkOutDate: checkOutController.text,
+          persons: personController.text,
+          rooms: roomController.text,
+          roomType: selectedRoomType ?? '',
+          guestName: nameController.text,
+          guestEmail: emailController.text,
+        ),
+      ),
+    );
+  },
+  text: "Confirm",
+  color: AppColors.primaryColor,
+  txtcolor: Colors.white,
+),
+
             ],
           ),
         ),
@@ -311,6 +326,7 @@ Future<void> _selectDate(BuildContext context, {required bool isCheckIn}) async 
         ),
         child: child!,
       );
+
     },
   );
 

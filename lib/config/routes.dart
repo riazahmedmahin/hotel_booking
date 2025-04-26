@@ -18,7 +18,7 @@ class Approutes{
     '/Onboarding':(context)=>OnboardingScreen(),
     '/OTP':(context)=>OtpScreen(),
     '/Newpass':(context)=>New_Password(),
-    '/Bookingsummary':(context)=>BookingSummaryScreen(hotel: null, checkIn: '', checkOut: '', guestName: '', roomType: '', guestEmail: '',)
+    //'Bookingsummary':(context)=>BookingSummaryScreen()
 
   
   };

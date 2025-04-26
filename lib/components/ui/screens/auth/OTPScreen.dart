@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
 import 'package:hotel_booking/components/ui/screens/auth/NewPassword.dart';
 import 'package:hotel_booking/components/ui/utility/app_color.dart';
 import 'package:hotel_booking/components/ui/widgets/custome_bottom.dart';
