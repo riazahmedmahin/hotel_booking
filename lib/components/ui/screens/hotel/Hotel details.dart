@@ -8,13 +8,7 @@ import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 class HotelDetailScreen extends StatelessWidget {
   final hotel;
 
-  // final List<String> imageUrls = [
-  //   // 'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjByb29tfGVufDB8fDB8fHww',
-  //   // 'https://plus.unsplash.com/premium_photo-1661929519129-7a76946c1d38?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGhvdGVsfGVufDB8fDB8fHww',
-  //   // 'https://images.unsplash.com/photo-1582719508461-905c673771fd',
-  //   // 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c',
-  // ];
-
+ 
   final List<Map<String, String>> videoList = [
     {
       'title': 'Hotel Tour',
